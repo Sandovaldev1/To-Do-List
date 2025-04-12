@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+#app{
+    background: #d8e1ee !important;
+}
