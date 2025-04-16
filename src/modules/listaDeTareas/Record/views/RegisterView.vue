@@ -53,4 +53,14 @@ const onSubmit = () => {
     font-weight: bold;
 }
 
+Form{
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+Form label{
+    color: black;
+}
+
 </style>
