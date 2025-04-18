@@ -1,5 +1,92 @@
+/* Importar TailwindCSS */
 @import "tailwindcss";
 
-#app{
-    background: #d8e1ee !important;
+/* Variables de color para el tema claro */
+@theme {
+    --color-text-light: #000000;
+    --color-btn-light: #1c293b;
+    --color-sidebar-bg-light: #ffffff; /* Color de fondo del sidebar claro */
+}
+
+/* Variables de color para el tema oscuro */
+@theme {
+    --color-bg-dark: #0C2D48; /* Fondo de toda la app en tema oscuro */
+    --color-text-dark: #ffffff;
+    --color-btn-dark: #ffffff;
+    --color-sidebar-bg-dark: #1c293b; /* Color de fondo del sidebar oscuro */
+    --color-sidebar-text-dark: #ffffff; /* Color de texto del sidebar oscuro */
+}
+
+/* Estilos generales */
+body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Tema oscuro */
+body.dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-dark);
+}
+
+/* Estilos de .main-content */
+.main-content {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: var(--color-bg-light); /* Fondo claro por defecto */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Fondo oscuro para .main-content cuando está en tema oscuro */
+body.dark .main-content {
+    background-color: var(--color-bg-dark) !important;
+    color: white !important;
+}
+
+/* Estilos del botón y el contenido principal */
+.theme-toggle-btn {
+    text-align: center;
+    color: white;
+    border: none;
+    border-radius: 200px;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Sidebar */
+.responsive-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    background-color: var(--color-sidebar-bg-light); /* Fondo del sidebar claro */
+    color: var(--color-sidebar-text-light); /* Texto del sidebar claro */
+    height: 100%;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+body.dark .responsive-sidebar {
+    background-color: var(--color-sidebar-bg-dark); /* Fondo del sidebar oscuro */
+    color: var(--color-sidebar-text-dark); /* Texto del sidebar oscuro */
+}
+
+.responsive-sidebar.sidebar-open {
+    transform: translateX(0);
+}
+
+/* Estilos para el botón hamburguesa */
+.hamburger {
+    background: var(--color-btn-light) !important;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
 }
