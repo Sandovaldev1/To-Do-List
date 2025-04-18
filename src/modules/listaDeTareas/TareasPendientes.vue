@@ -12,7 +12,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useTareaStore } from './Record/stores/tareaStore'
+import { useTareaStore } from './Record/stores/useTareaStore'
 import TareaItem from './TareaItem.vue'
 
 const store = useTareaStore()
